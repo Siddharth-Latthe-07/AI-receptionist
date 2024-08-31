@@ -11,7 +11,8 @@ This project implements an AI-based receptionist using FastAPI for handling vari
 ##### Setup:
 ##### 1. Clone the Repository
 ##### 2. Build and Run Docker Containers
-`docker run -d -p 8000:8000 --name ai_receptionist_container ai_receptionist'
+`docker run -d -p 8000:8000 --name ai_receptionist_container ai_receptionist`
+
 `docker run -d --name qdrant -p 6333:6333 qdrant/qdrant`
 ##### 3. Initialize Qdrant Database
 `docker exec -it ai_receptionist_container python scripts/initialize_qdrant.py`
