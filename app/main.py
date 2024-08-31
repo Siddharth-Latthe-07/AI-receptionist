@@ -12,8 +12,8 @@ client = QdrantClient("http://localhost:6333")
 @app.post("/start")
 async def start_conversation(background_tasks: BackgroundTasks, content: str = Form(...)):
     if 'emergency' in content.lower():
-        return {"response": "Is this an emergency? Please confirm."}
-    return {"response": "Would you like to leave a message?"}
+        return {"response": "Would you like to leave a message?"}
+    return {"response": "Is this an emergency? Please confirm."}
 
 @app.post("/emergency")
 async def handle_emergency(background_tasks: BackgroundTasks, description: str = Form(...)):
