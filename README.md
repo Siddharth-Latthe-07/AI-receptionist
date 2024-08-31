@@ -11,4 +11,22 @@ This project implements an AI-based receptionist using FastAPI for handling vari
 ##### Setup:
 ##### 1. Clone the Repository
 ##### 2. Build and Run Docker Containers
-##### 3. 
+##### 3. Initialize Qdrant Database
+`docker exec -it ai_receptionist_container python scripts/initialize_qdrant.py`
+##### 4. To run the main.py:
+`pip install -e .`
+`uvicorn app.main:app --reload`
+##### 4. Access the Application
+API Documentation: `http://localhost:8000/docs (Swagger UI)`
+Qdrant status check: `http://localhost:6333/collections/emergencies`
+##### 5. Swagger UI
+Once the application is running, you can interact with it using the Swagger UI at http://localhost:8000/docs. The Swagger UI provides a web-based interface to test all the available endpoints, view the expected inputs and outputs, and see the detailed API documentation.
+##### 6. Sample Requests
+```/start
+Input: {"content": "I need help"}
+Response: {"response": "Would you like to leave a message?"}
+```
+```/emergency
+Input: {"description": "Heart attack"}
+Response: {"response": "I am checking what you should do immediately, meanwhile, can you tell me which area are you located right now?"}
+```
