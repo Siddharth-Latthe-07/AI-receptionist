@@ -1,6 +1,6 @@
 # AI-receptionist
 ##### Overview:
-This project implements an AI-based receptionist using FastAPI for handling various interactions and Qdrant for vector-based emergency response handling. The application provides endpoints to start a conversation, handle emergency requests, store messages, and manage location-based queries. 
+This project implements an AI-based receptionist using FastAPI for handling various interactions and Qdrant for vector-based emergency response handling with LLM. The application provides endpoints to start a conversation, handle emergency requests, store messages, and manage location-based queries. 
 ##### Features:
 1. `/start`: Initiate a conversation and determine if the user needs emergency assistance.
 2. `/emergency`: Handle emergency requests and provide instructions based on the user's input.
@@ -9,6 +9,7 @@ This project implements an AI-based receptionist using FastAPI for handling vari
 5. `/confirmation`: Confirm if the situation is an emergency and provide follow-up steps.
 
 ##### Setup:
+(generate an openai api key)
 ##### 1. Clone the Repository
 ##### 2. Build and Run Docker Containers
 `docker run -d -p 8000:8000 --name ai_receptionist_container ai_receptionist`
@@ -24,12 +25,3 @@ API Documentation: `http://localhost:8000/docs (Swagger UI)`
 Qdrant status check: `http://localhost:6333/collections/emergencies`
 ##### 5. Swagger UI
 Once the application is running, you can interact with it using the Swagger UI at http://localhost:8000/docs. The Swagger UI provides a web-based interface to test all the available endpoints, view the expected inputs and outputs, and see the detailed API documentation.
-##### 6. Sample Requests
-```/start
-Input: {"content": "I need help"}
-Response: {"response": "Would you like to leave a message?"}
-```
-```/emergency
-Input: {"description": "Heart attack"}
-Response: {"response": "I am checking what you should do immediately, meanwhile, can you tell me which area are you located right now?"}
-```
