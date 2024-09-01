@@ -9,6 +9,8 @@ setup(
         'fastapi',
         'uvicorn',
         'qdrant-client',
+        'openai', 
+        'python-dotenv'
         'numpy',
     ],
     entry_points={
