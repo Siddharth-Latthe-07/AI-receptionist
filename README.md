@@ -9,8 +9,11 @@ This project implements an AI-based receptionist using FastAPI for handling vari
 5. `/confirmation`: Confirm if the situation is an emergency and provide follow-up steps.
 
 ##### Setup:
-(generate an openai api key)
+(generate an openai api key, as it would be required to use LLM response. Placed the same in utlis and config.py files)
 ##### 1. Clone the Repository
+##### 2. setup the env:
+Create a .env file in the root directory (if not already present) and add your environment variables.
+
 ##### 2. Build and Run Docker Containers
 `docker run -d -p 8000:8000 --name ai_receptionist_container ai_receptionist`
 
